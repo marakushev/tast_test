@@ -2,9 +2,10 @@
 Создание книги и автора сделал разными подходами. (Для книг все делается в сервисе, для автора в контролере)
 
 ```
+git clone https://github.com/marakushev/tast_test.git
 cd docker
-docker-compose up -d (Пропадёт 502 ошибка)
-Дождаться создание и установки конейнеров
+docker-compose up -d
+Дождаться создание и установки конейнеров (Пропадёт 502 ошибка)
 docker-compose run php-fpm ./bin/console doctrine:fixtures:load --append
 (эту команду тоже можно было вставить в docker файл)
 ```
