@@ -3,7 +3,8 @@
 
 ```
 cd docker
-docker-compose up -d
+docker-compose up -d (Пропадёт 502 ошибка)
 Дождаться создание и установки конейнеров
-docker-compose run php-fpm ./bin/console doctrine:fixtures:load
+docker-compose run php-fpm ./bin/console doctrine:fixtures:load --append
+(эту команду тоже можно было вставить в docker файл)
 ```
