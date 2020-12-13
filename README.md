@@ -4,7 +4,6 @@
 ```
 cd docker
 docker-compose up -d
-Подождать несколько секунд
-docker-compose run php-fpm ./bin/console doctrine:schema:create
+Дождаться создание и установки конейнеров
 docker-compose run php-fpm ./bin/console doctrine:fixtures:load
 ```
