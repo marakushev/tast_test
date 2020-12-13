@@ -80,7 +80,7 @@ class BookService
 
         if (
             $request->get('name') &&
-            !$bookRepository->findOneBy([
+            $bookRepository->findOneBy([
                 'name' => $request->get('name')
             ])
         ) {

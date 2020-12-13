@@ -82,7 +82,7 @@ class ApiController extends AbstractController
 
             if (
                 $request->get('name') &&
-                !$authorRepository->findOneBy([
+                $authorRepository->findOneBy([
                     'name' => $request->get('name')
                 ])
             ) {
@@ -134,13 +134,11 @@ class ApiController extends AbstractController
      * @param string $name
      * @param BookRepository $bookRepository
      * @return JsonResponse
-     * @Route("/search/book/{name}", name="author_create", methods={"GET"})
+     * @Route("/search/book/{name}", name="search_book", methods={"GET"})
      */
     public function searchBooks(string $name, BookRepository $bookRepository): JsonResponse
     {
-        $books = $bookRepository->findBy([
-            'name' => $name
-        ]);
+        $books = $bookRepository->search($name);
 
         return new JsonResponse($books);
     }
